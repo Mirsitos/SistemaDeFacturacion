@@ -32,7 +32,6 @@ namespace SistemaProyecto.Views
 
         #region "Mis variables"
         
-        int Estadoguarda = 0;                                       //region variables
         string nombre_prove = "";       // variable guia o pk
         #endregion
 
@@ -120,7 +119,6 @@ namespace SistemaProyecto.Views
                     {
                         cargarListaDatos();
                         MessageBox.Show("Los datos se han cargado correctamente.", "Aviso de Sistema", MessageBoxButtons.OK);
-                        Estadoguarda = 0; //sin ninguna accion
                         this.Estado_BotonesPrincipales(true);
                         this.Estado_Botonesprocesos(false);
                         text_Categoria.Text = "";
@@ -161,7 +159,6 @@ namespace SistemaProyecto.Views
                 {
                     cargarListaDatos();
                     MessageBox.Show("Los datos se han cambiado/actualizado correctamente.", "Aviso de Sistema", MessageBoxButtons.OK);
-                    Estadoguarda = 0; //sin ninguna accion
                     this.Estado_BotonesPrincipales(true);
                     this.Estado_Botonesprocesos(false);
                     text_Categoria.Text = "";
@@ -191,7 +188,6 @@ namespace SistemaProyecto.Views
 
         private void btn_Nuevo_Click(object sender, EventArgs e)
         {
-            Estadoguarda = 1; // nuevo registro
             this.Estado_BotonesPrincipales(false);
             this.Estado_Botonesprocesos(true);
             text_Categoria.Text = "";
@@ -209,7 +205,6 @@ namespace SistemaProyecto.Views
 
         private void btn_Actualizar_Click(object sender, EventArgs e)
         {
-            Estadoguarda = 2; // actualizar registro
             this.Estado_BotonesPrincipales(false);
             this.Estado_Botonesprocesos(true);
             this.Selecciona_item();
@@ -223,7 +218,6 @@ namespace SistemaProyecto.Views
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
-            Estadoguarda = 0; // sin ninguna accion
             nombre_prove = "";
             text_Categoria.Text = "";
             text_Categoria.ReadOnly = true;
@@ -292,7 +286,6 @@ namespace SistemaProyecto.Views
                     {
                         cargarListaDatos();
                         MessageBox.Show("Los datos se han eliminado correctamente.", "Aviso de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        Estadoguarda = 0; //sin ninguna accion
                         this.Estado_BotonesPrincipales(true);
                         this.Estado_Botonesprocesos(false);
                         text_Categoria.Text = "";

@@ -95,7 +95,7 @@
             // 
             // btn_Buscar
             // 
-            this.btn_Buscar.Location = new System.Drawing.Point(342, 31);
+            this.btn_Buscar.Location = new System.Drawing.Point(378, 35);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 23);
             this.btn_Buscar.TabIndex = 2;
@@ -105,7 +105,7 @@
             // 
             // text_Buscar
             // 
-            this.text_Buscar.Location = new System.Drawing.Point(113, 35);
+            this.text_Buscar.Location = new System.Drawing.Point(159, 35);
             this.text_Buscar.Name = "text_Buscar";
             this.text_Buscar.Size = new System.Drawing.Size(188, 23);
             this.text_Buscar.TabIndex = 1;
@@ -113,11 +113,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 35);
+            this.label1.Location = new System.Drawing.Point(32, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 16);
+            this.label1.Size = new System.Drawing.Size(133, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Buscar: ";
+            this.label1.Text = "Buscar (Nombre):  ";
             // 
             // tabPage2Proveedor
             // 

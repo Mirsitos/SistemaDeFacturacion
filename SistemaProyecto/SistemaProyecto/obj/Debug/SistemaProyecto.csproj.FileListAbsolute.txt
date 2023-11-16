@@ -87,3 +87,4 @@ E:\ComputerScience\Ing. Informatica UA\Semestre 6 - 2023\Optativo 3\Proyecto\Sis
 E:\ComputerScience\Ing. Informatica UA\Semestre 6 - 2023\Optativo 3\Proyecto\SistemaProyecto\SistemaProyecto\obj\Debug\SistemaProyecto.exe
 E:\ComputerScience\Ing. Informatica UA\Semestre 6 - 2023\Optativo 3\Proyecto\SistemaProyecto\SistemaProyecto\obj\Debug\SistemaProyecto.pdb
 E:\ComputerScience\Ing. Informatica UA\Semestre 6 - 2023\Optativo 3\Proyecto\SistemaProyecto\SistemaProyecto\obj\Debug\SistemaProyecto.Views.MenuProveedores.resources
+E:\ComputerScience\Ing. Informatica UA\Semestre 6 - 2023\Optativo 3\Proyecto\SistemaProyecto\SistemaProyecto\obj\Debug\SistemaProyecto.Views.MenuClientes.resources

@@ -140,5 +140,12 @@ namespace SistemaProyecto.Views
             mnu.Show();
             
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuClientes mnu = new MenuClientes();
+            mnu.MdiParent = this;
+            mnu.Show();
+        }
     }
 }
