@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ProveedoresVo.cs" />
     <Compile Include="Dao\Conexion.cs" />
     <Compile Include="Dao\EmpleadoDao.cs" />
     <Compile Include="Dao\ProveedoresDao.cs" />
@@ -156,9 +157,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\logo_1x1.PNG" />
   </ItemGroup>

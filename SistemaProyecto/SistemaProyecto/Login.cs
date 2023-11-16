@@ -28,18 +28,7 @@ namespace SistemaProyecto
         
         private void checkEmpleado()
         {
-
-            string server = "localhost";     //  DATOS DE LA CONEXION A LA BD
-            string database = "Facturacion";
-            string user = "root";
-            string password = "root";
-
-            string cadenaConexion = $"database={database}" +
-                $"; datasource={server}" +
-                $"; User ID={user}" +
-                $"; Password={password}";
-
-
+            string cadenaConexion = Conexion.getInstancia().getCadenaConexion();
             string Usuario_datos = textUsuario.Text;
             string Contrasena_datos = textUsuario.Text;
 
