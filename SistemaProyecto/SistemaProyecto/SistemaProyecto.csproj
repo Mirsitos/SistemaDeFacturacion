@@ -98,11 +98,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CategoriaVo.cs" />
     <Compile Include="Controllers\ClienteVo.cs" />
+    <Compile Include="Controllers\MarcasVo.cs" />
+    <Compile Include="Controllers\ProductoVo.cs" />
     <Compile Include="Controllers\ProveedoresVo.cs" />
+    <Compile Include="Dao\CategoriaDao.cs" />
     <Compile Include="Dao\ClienteDao.cs" />
     <Compile Include="Dao\Conexion.cs" />
     <Compile Include="Dao\EmpleadoDao.cs" />
+    <Compile Include="Dao\MarcasDao.cs" />
+    <Compile Include="Dao\ProductoDao.cs" />
     <Compile Include="Dao\ProveedoresDao.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -110,22 +116,43 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Empleado.cs" />
+    <Compile Include="Models\Marcas.cs" />
+    <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Proveedores.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\MenuCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MenuCategoria.Designer.cs">
+      <DependentUpon>MenuCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MenuClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\MenuClientes.Designer.cs">
       <DependentUpon>MenuClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\MenuMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MenuMarcas.Designer.cs">
+      <DependentUpon>MenuMarcas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MenuProducto.Designer.cs">
+      <DependentUpon>MenuProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\MenuProveedores.cs">
       <SubType>Form</SubType>
@@ -146,11 +173,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\MenuCategoria.resx">
+      <DependentUpon>MenuCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MenuClientes.resx">
       <DependentUpon>MenuClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\MenuMarcas.resx">
+      <DependentUpon>MenuMarcas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MenuProducto.resx">
+      <DependentUpon>MenuProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MenuProveedores.resx">
       <DependentUpon>MenuProveedores.cs</DependentUpon>

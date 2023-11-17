@@ -147,5 +147,26 @@ namespace SistemaProyecto.Views
             mnu.MdiParent = this;
             mnu.Show();
         }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuCategoria mnu = new MenuCategoria();
+            mnu.MdiParent = this;
+            mnu.Show();
+        }
+
+        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuMarcas mnu = new MenuMarcas();
+            mnu.MdiParent = this;
+            mnu.Show();
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuProducto mnu = new MenuProducto();
+            mnu.MdiParent = this;
+            mnu.Show();
+        }
     }
 }
