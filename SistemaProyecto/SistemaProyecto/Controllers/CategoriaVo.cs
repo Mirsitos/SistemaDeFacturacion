@@ -13,7 +13,7 @@ namespace SistemaProyecto.Controllers
     {
         Categoria bean = new Categoria();
         CategoriaDao dao = new CategoriaDao();
-        public string resp;
+        //public string resp;
         public static DataTable listarDatos(string nomCat)
         {
             return CategoriaDao.Listado_Categorias(nomCat);

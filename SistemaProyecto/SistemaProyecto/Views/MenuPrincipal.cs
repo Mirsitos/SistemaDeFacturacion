@@ -128,6 +128,31 @@ namespace SistemaProyecto.Views
             }
         }
 
+        public void probarConexion()
+        {
+            string result = "";
+            MySqlDataReader mySqlDataReader = null;
+            string consulta = "select * from empleados";
+            if (mConexion.getPruebaDeConexion() != null)
+            {
+                MySqlCommand mySqlCommand = new MySqlCommand(consulta);
+                mySqlCommand.Connection = mConexion.getPruebaDeConexion();
+                mySqlDataReader = mySqlCommand.ExecuteReader();
+
+                while (mySqlDataReader.Read())
+                {
+                    result = mySqlDataReader.GetString("gmail");
+                    result = "(select * from empleados)El mail del usuario es: " + result;
+                }
+                //MessageBox.Show(result);
+                MessageBox.Show("Conexion al servidor exitosa!");
+            }
+            else
+            {
+                MessageBox.Show("Error al conectar.");
+            }
+        }
+
         private void movimientoToolStripMenuItem_Click(object sender, EventArgs e)
         {
 

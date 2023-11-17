@@ -9,6 +9,8 @@ using SistemaProyecto.Models;
 using MySql.Data.MySqlClient;
 using System.Data;
 using SistemaProyecto.Dao;
+using SistemaProyecto.Views;
+using System.Management;
 
 namespace SistemaProyecto.Controllers
 {
@@ -30,6 +32,11 @@ namespace SistemaProyecto.Controllers
         private string almacen;
          */
 
+        public static DataTable listarDatos(string nombreProdListado)
+        {
+            return ProductoDao.Listado_Productos(nombreProdListado);
+
+        }
 
         public void agregar(string nombre, int codigoprod, int cantidad, string categoria, string marca, string almacen)
         {
@@ -83,14 +90,19 @@ namespace SistemaProyecto.Controllers
             }
         }
 
-        public void eliminar(string nom)
+        public void eliminar(string nom, Producto obj)
         {
             resp = "aguardando dao";
             bean.Nombre = nom;
+            bean.Cantidad = obj.Cantidad;
+            bean.Categoria = obj.Categoria;
+            bean.Marca = obj.Marca;
+            bean.Almacen = obj.Almacen;
+
             dao.Eliminar_Prod(bean);
             if (dao.respGral == "En proceso")
+                
             {
-                resp = dao.respGral;
                 //MessageBox.Show("El proceso no se realizo con exito");
             }
             else if (dao.respGral == "ok")

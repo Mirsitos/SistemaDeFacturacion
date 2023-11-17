@@ -110,6 +110,9 @@ namespace SistemaProyecto.Views
             comboBox_Marca.Enabled = true;
             comboBox_Almacen.Enabled = true;
 
+            dataGridViewProducto.Enabled = false;
+
+
             ProductoTabPrincipal.SelectedIndex = 1;
             text_CodigoProducto.Focus();
         }
@@ -136,6 +139,7 @@ namespace SistemaProyecto.Views
                     obj.CodigoProducto = Convert.ToInt32(text_CodigoProducto.Text.Trim());
                     //MessageBox.Show($"{obj.CodigoProducto }, {obj.CodigoProducto.GetType()}");
                     obj.Cantidad = Convert.ToInt32(text_Cantidad.Text.Trim());
+
                     obj.Categoria = comboBox_Categoria.SelectedItem.ToString();
                     obj.Marca = comboBox_Marca.SelectedItem.ToString();
                     obj.Almacen = comboBox_Almacen.SelectedItem.ToString();
@@ -160,6 +164,9 @@ namespace SistemaProyecto.Views
                         comboBox_Categoria.Enabled = false;
                         comboBox_Marca.Enabled = false;
                         comboBox_Almacen.Enabled = false;
+
+                        desactivarCampos();
+
                         ProductoTabPrincipal.SelectedIndex = 0;
                         nombre_producto = "";
                     }
@@ -178,7 +185,7 @@ namespace SistemaProyecto.Views
             }
             else 
             { 
-                cargarListaDatos();                                 // se selecciono un cliente del dgv (actualizar datos)
+                cargarListaDatos();                                 // se selecciono un cliente del dgv (actualizar datos) // modificar datos
             
                 Producto obj = new Producto();
                 ProductoVo vo = new ProductoVo();
@@ -213,6 +220,7 @@ namespace SistemaProyecto.Views
                     comboBox_Marca.Enabled = false;
                     comboBox_Almacen.Enabled = false;
 
+                    desactivarCampos();
 
                     ProductoTabPrincipal.SelectedIndex = 0;
                     nombre_producto = "";
@@ -228,6 +236,7 @@ namespace SistemaProyecto.Views
                     MessageBox.Show("Aguardando dao...", "Aviso de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            dataGridViewProducto.Enabled = true;
         }
 
         private void MenuProducto_Load(object sender, EventArgs e)
@@ -253,7 +262,30 @@ namespace SistemaProyecto.Views
 
             this.Estado_BotonesPrincipales(true);
             this.Estado_Botonesprocesos(false);
+
+            desactivarCampos();
+            dataGridViewProducto.Enabled = true;
+
             ProductoTabPrincipal.SelectedIndex = 0;
+        }
+
+        private void desactivarCampos()
+        {
+            text_Nombre.Text = "";                  // desactivar campos
+            text_CodigoProducto.Text = "";
+            text_Cantidad.Text = "";
+
+            text_Nombre.ReadOnly = true;            // desactivar campos
+            text_CodigoProducto.ReadOnly = true;
+            text_Cantidad.ReadOnly = true;
+            comboBox_Categoria.Enabled = false;
+            comboBox_Marca.Enabled = false;
+            comboBox_Almacen.Enabled = false;
+
+            comboBox_Categoria.SelectedIndex = -1;
+            comboBox_Marca.SelectedIndex = -1;
+            comboBox_Almacen.SelectedIndex = -1;
+            
         }
 
         private void btn_Regresar_Click(object sender, EventArgs e)
@@ -273,6 +305,10 @@ namespace SistemaProyecto.Views
 
             this.Estado_BotonesPrincipales(true);
             this.Estado_Botonesprocesos(false);
+
+            dataGridViewProducto.Enabled = true;
+            desactivarCampos();
+
             ProductoTabPrincipal.SelectedIndex = 0;
         }
 
@@ -321,12 +357,21 @@ namespace SistemaProyecto.Views
                     this.nombre_producto = Convert.ToString(dataGridViewProducto.CurrentRow.Cells["CodigoProducto"].Value);// cargar valor seleccionado // valor cambiado de nombre a codigoProd
                     // enviar a ejecutar la eliminacion de datos
 
-
+                    
                     Producto obj = new Producto();
                     ProductoVo vo = new ProductoVo();
 
-                    obj.Nombre = nombre_producto;
-                    vo.eliminar(obj.Nombre);
+                    // this.nombre_producto = Convert.ToString(dataGridViewProducto.CurrentRow.Cells["CodigoProducto"].Value);// cargar valor seleccionado // valor cambiado de nombre a codigoProd
+
+                    obj.Nombre = nombre_producto; // en realidad es CodigoProducto pero en string
+                    //obj.Cantidad = 
+                    string cat =  Convert.ToString(dataGridViewProducto.CurrentRow.Cells["Cantidad"].Value);
+                    obj.Cantidad = Convert.ToInt32(cat);
+                    obj.Categoria= Convert.ToString(dataGridViewProducto.CurrentRow.Cells["categoria"].Value);
+                    obj.Marca= Convert.ToString(dataGridViewProducto.CurrentRow.Cells["marca"].Value);
+                    obj.Almacen= Convert.ToString(dataGridViewProducto.CurrentRow.Cells["almacen"].Value);
+
+                    vo.eliminar(obj.Nombre, obj);
                     if (vo.resp == "ok")
                     {
                         cargarListaDatos();
@@ -366,6 +411,48 @@ namespace SistemaProyecto.Views
 
 
 
+            }
+        }
+
+        #region "agregar +x a cat, marca, almacen" 
+        public ComboBox getComboBoxCategoria()
+        {
+            return comboBox_Categoria;
+        }
+
+        public ComboBox getComboBoxMarca()
+        {
+            return comboBox_Marca;
+        }
+
+        public ComboBox getComboBoxAlmacen()
+        {
+            return comboBox_Almacen;
+        }
+        #endregion
+
+        private void btn_Buscar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(text_Buscar.Text))
+            {
+                cargarListaDatos();
+            }
+            else
+            {
+                this.listado_Productos(text_Buscar.Text.Trim());
+            }
+        }
+
+        private void listado_Productos(string nombreCliListado)
+        {
+            try
+            {
+                dataGridViewProducto.DataSource = ProductoVo.listarDatos(nombreCliListado);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error en listado Productos" + ex.Message + ex.StackTrace);
             }
         }
     }
