@@ -85,6 +85,7 @@ namespace SistemaProyecto
         {
             MenuPrincipal obj = new MenuPrincipal();
             obj.probarConexion();
+            button1.Enabled = false;
         }
     }
 }

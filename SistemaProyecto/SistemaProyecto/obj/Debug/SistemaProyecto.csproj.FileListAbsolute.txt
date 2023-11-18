@@ -140,3 +140,4 @@ E:\ComputerScience\Ing. Informatica UA\Semestre 6 - 2023\Optativo 3\Proyecto\Sis
 E:\ComputerScience\Ing. Informatica UA\Semestre 6 - 2023\Optativo 3\Proyecto\SistemaProyecto - Copy (4)\SistemaProyecto\obj\Debug\SistemaProyecto.csproj.CopyComplete
 E:\ComputerScience\Ing. Informatica UA\Semestre 6 - 2023\Optativo 3\Proyecto\SistemaProyecto - Copy (4)\SistemaProyecto\obj\Debug\SistemaProyecto.exe
 E:\ComputerScience\Ing. Informatica UA\Semestre 6 - 2023\Optativo 3\Proyecto\SistemaProyecto - Copy (4)\SistemaProyecto\obj\Debug\SistemaProyecto.pdb
+E:\ComputerScience\Ing. Informatica UA\Semestre 6 - 2023\Optativo 3\Proyecto\SistemaProyecto\SistemaProyecto\obj\Debug\SistemaProyecto.Views.MenuAlmacenes.resources

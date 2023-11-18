@@ -331,7 +331,7 @@ namespace SistemaProyecto.Views
 
         private void dataGridViewProducto_DoubleClick(object sender, EventArgs e)
         {
-            this.Selecciona_item();
+            /*this.Selecciona_item();
             this.Estado_Botonesprocesos(true);
             text_Nombre.ReadOnly = false;            // desactivar campos
             text_CodigoProducto.ReadOnly = true;
@@ -339,7 +339,23 @@ namespace SistemaProyecto.Views
             comboBox_Categoria.Enabled = true;
             comboBox_Marca.Enabled = true;
             comboBox_Almacen.Enabled = true;
+            ProductoTabPrincipal.SelectedIndex = 1;*/
+
+
+            this.Estado_BotonesPrincipales(false);
+            this.Estado_Botonesprocesos(true);
+            this.Selecciona_item();
             ProductoTabPrincipal.SelectedIndex = 1;
+
+            text_Nombre.ReadOnly = false;            // desactivar campos
+            text_CodigoProducto.ReadOnly = true;
+            text_Cantidad.ReadOnly = false;
+            comboBox_Categoria.Enabled = true;
+            comboBox_Marca.Enabled = true;
+            comboBox_Almacen.Enabled = true;
+
+            text_Nombre.Focus();
+
         }
 
         private void btn_Eliminar_Click(object sender, EventArgs e)

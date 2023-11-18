@@ -193,5 +193,13 @@ namespace SistemaProyecto.Views
             mnu.MdiParent = this;
             mnu.Show();
         }
+
+        private void almacenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuAlmacenes mnu = new MenuAlmacenes();
+            mnu.MdiParent = this;
+            mnu.Show();
+
+        }
     }
 }

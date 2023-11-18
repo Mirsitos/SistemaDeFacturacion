@@ -1,6 +1,4 @@
-﻿using SistemaProyecto.Controllers;
-using SistemaProyecto.Dao;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,25 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using SistemaProyecto.Controllers;
+using SistemaProyecto.Dao;
+
 namespace SistemaProyecto.Views
 {
-    public partial class MenuCategoria : Form
+    public partial class MenuAlmacenes : Form
     {
-        public MenuCategoria()
+        public MenuAlmacenes()
         {
             InitializeComponent();
         }
 
         void cargarListaDatos()
         {
-            dataGridViewCategorias.DataSource = CategoriaDao.getListaCategorias();
+            dataGridViewAlmacenes.DataSource = AlmacenDao.getListaAlmacenes();
         }
 
-        private void listado_Categorias(string nomCat)
+        private void listado_Almacenes(string nomCat)
         {
             try
             {
-                dataGridViewCategorias.DataSource = CategoriaVo.listarDatos(nomCat);
+                dataGridViewAlmacenes.DataSource = AlmacenVo.listarDatos(nomCat);
             }
             catch (Exception ex)
             {
@@ -37,7 +38,7 @@ namespace SistemaProyecto.Views
             }
         }
 
-        private void MenuCategoria_Load(object sender, EventArgs e)
+        private void MenuAlmacenes_Load(object sender, EventArgs e)
         {
             cargarListaDatos();
         }
@@ -50,10 +51,8 @@ namespace SistemaProyecto.Views
             }
             else
             {
-                this.listado_Categorias(text_Buscar.Text.Trim());
+                this.listado_Almacenes(text_Buscar.Text.Trim());
             }
-
-
         }
     }
 }
