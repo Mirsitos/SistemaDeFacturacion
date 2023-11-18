@@ -270,7 +270,7 @@ namespace SistemaProyecto.Views
             else
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Desea eliminar el usuario seleccionado?", "Aviso de Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("Desea eliminar el Proveedor seleccionado?", "Aviso de Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(Opcion == DialogResult.Yes)
                 {
                     this.nombre_prove = Convert.ToString(dataGridViewProveedores.CurrentRow.Cells["nombre"].Value);// cargar valor seleccionado

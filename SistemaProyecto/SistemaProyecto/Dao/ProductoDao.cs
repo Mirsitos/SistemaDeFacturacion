@@ -159,7 +159,8 @@ namespace SistemaProyecto.Dao
         public void modificar(Producto obj)
         {
             Producto prodAnterior = duplicarProd(obj.CodigoProducto);
-
+            MessageBox.Show($"Producto anteriormente tenia: {prodAnterior.Cantidad}");
+            MessageBox.Show($"Producto actualmente tiene: {obj.Cantidad}");
             try
             {
                 if (prodAnterior.Cantidad != obj.Cantidad) // si se cambio la cantidad
@@ -167,15 +168,17 @@ namespace SistemaProyecto.Dao
                     MessageBox.Show("Se modifico la cantidad del producto");
                     if (prodAnterior.Cantidad < obj.Cantidad) // ahora hay mas prod.
                     {
-                        sumarATabla("Categorias", "CantidadProductos", obj.Cantidad, "Nombre", obj.Categoria);
-                        sumarATabla("Marcas", "Items", obj.Cantidad, "Nombre", obj.Marca);
-                        sumarATabla("Almacenes", "CantidadProductos", obj.Cantidad, "Nombre", obj.Almacen);
+                        int cantNueva = obj.Cantidad - prodAnterior.Cantidad;
+                        sumarATabla("Categorias", "CantidadProductos", cantNueva, "Nombre", obj.Categoria);
+                        sumarATabla("Marcas", "Items", cantNueva, "Nombre", obj.Marca);
+                        sumarATabla("Almacenes", "CantidadProductos", cantNueva, "Nombre", obj.Almacen);
                     }
                     else // hay menos productos
                     {
-                        restarATabla("Categorias", "CantidadProductos", obj.Cantidad, "Nombre", obj.Categoria);
-                        restarATabla("Marcas", "Items", obj.Cantidad, "Nombre", obj.Marca);
-                        restarATabla("Almacenes", "CantidadProductos", obj.Cantidad, "Nombre", obj.Almacen);
+                        int cantNueva = prodAnterior.Cantidad - obj.Cantidad;
+                        restarATabla("Categorias", "CantidadProductos", cantNueva, "Nombre", obj.Categoria);
+                        restarATabla("Marcas", "Items", cantNueva, "Nombre", obj.Marca);
+                        restarATabla("Almacenes", "CantidadProductos", cantNueva, "Nombre", obj.Almacen);
                     }
                 }
             }

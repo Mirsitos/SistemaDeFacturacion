@@ -367,7 +367,7 @@ namespace SistemaProyecto.Views
             else
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Desea eliminar el usuario seleccionado?", "Aviso de Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("Desea eliminar el Producto seleccionado?", "Aviso de Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Opcion == DialogResult.Yes)
                 {
                     this.nombre_producto = Convert.ToString(dataGridViewProducto.CurrentRow.Cells["CodigoProducto"].Value);// cargar valor seleccionado // valor cambiado de nombre a codigoProd

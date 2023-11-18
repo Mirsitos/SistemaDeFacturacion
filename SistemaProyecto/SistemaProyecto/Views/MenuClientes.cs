@@ -199,7 +199,7 @@ namespace SistemaProyecto.Views
             else
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Desea eliminar el usuario seleccionado?", "Aviso de Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("Desea eliminar el Cliente seleccionado?", "Aviso de Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (Opcion == DialogResult.Yes)
                 {
                     this.nombre_cliente = Convert.ToString(dataGridViewCliente.CurrentRow.Cells["cedula"].Value);// cargar valor seleccionado
